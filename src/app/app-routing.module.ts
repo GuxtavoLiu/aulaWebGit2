@@ -4,10 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { Erro404Component } from './erro404/erro404.component';
+import { SomaComponent } from './soma/soma.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent}
   ,{path: 'sobre', component: SobreComponent}
+  ,{path: 'soma', component: SomaComponent}
   ,{path: '**', component: Erro404Component}
 
 ];
