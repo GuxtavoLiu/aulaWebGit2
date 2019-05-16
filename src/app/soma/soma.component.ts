@@ -13,7 +13,7 @@ export class SomaComponent{
 
   somar(): void{
     let total = Number(this.numero1) + Number(this.numero2);
-    alert("A soma é " + total);
+    alert("A soma dos valores é: " + total);
   }
 
 }
