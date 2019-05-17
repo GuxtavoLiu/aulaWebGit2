@@ -1,7 +1,38 @@
 <div class="container">
-  <input type="text" name="nome" value="" [(ngModel)]="nome">
-  <button type="button" name="button" (click)="adicionar()" >Adicionar</button>
-  <ul>
-    <li *ngFor="let nome of nomes" >{{ nome }}</li>
-  </ul>
+  <form class="m-5">
+    <div class="row">
+      <div class="form-group">
+        <input class="form-control" type="text" name="nome" value="" [(ngModel)]="nome">
+      </div>
+      <div class="">
+        <button class="btn btn-info" type="button" name="button" (click)="adicionar()" >Adicionar</button>
+      </div>
+    </div>
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Excluir</th>
+        <th scope="col">Alterar</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let nome of nomes; let i = index" >
+        <td>{{ nome }}</td>
+        <td>
+          <button class="btn btn-danger" type="button" name="button">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-warning" type="button" name="button"><i class="fas fa-edit"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
 </div>
