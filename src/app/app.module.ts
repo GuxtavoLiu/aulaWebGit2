@@ -11,10 +11,11 @@ import { SobreComponent } from './sobre/sobre.component';
 import { Erro404Component } from './erro404/erro404.component';
 import { SomaComponent } from './soma/soma.component';
 import { FormsModule } from '@angular/forms';
+import { VetoresComponent } from './vetores/vetores.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HomeComponent, RodapeComponent, SobreComponent, Erro404Component, SomaComponent
+    AppComponent, HomeComponent, RodapeComponent, SobreComponent, Erro404Component, SomaComponent, VetoresComponent
   ],
   imports: [
     BrowserModule,
