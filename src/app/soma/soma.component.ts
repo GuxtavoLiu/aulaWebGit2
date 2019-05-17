@@ -12,6 +12,7 @@ export class SomaComponent{
   numero2 : number = 0;
   numero3 : number = 0;
   numero4 : number = 0;
+  numero5 : number = 0;
 
   somar(): void{
     let total = Number(this.numero1) + Number(this.numero2);
@@ -31,11 +32,25 @@ export class SomaComponent{
     }
 
 
-    positivo(): void{
-      let resultado: string : 'positivo';
-
-
-
-
+    positivo() : void{
+    let resultado: string = 'positivo';
+    if(Number(this.numero4) < 0){
+      resultado = 'negativo';
     }
+    alert(resultado);
+  }
+
+  parPositivo(): void{
+    let num : number = Number(this.numero5);
+    if (num %2 == 0 && num >=0) {
+        alert('par e positivo');
+    }else{
+      alert('não é par ou positivo');
+    }
+  }
+
+
+
+
+
   }
