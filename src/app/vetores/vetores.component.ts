@@ -9,7 +9,10 @@ import { ServicoEstado } from '../servicos/servico.estado'
 
 
 export class VetoresComponent{
-  servico = new ServicoEstado();
+
+
+  constructor(private  servico: ServicoEstado){
+  }
 
   adicionar() : void{
     this.servico.adicionar();
