@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 
 
 export class VetoresComponent{
-  nomes: string[] = ['Marcos', 'Maria', 'Joaquina'];
+  nomes= new Array<string>();
+
   nome : string='';
 
 
@@ -16,7 +17,21 @@ export class VetoresComponent{
   }
 
   adicionar() : void{
-    this.nomes.push(this.nome);
-    this.nome= '';
+    if (this.nome != '') {
+
+      this.nomes.push(this.nome);
+      this.nome= '';
+    }
+
+  }
+
+  excluir(i:number) : void{
+    this.nomes.splice(i,1);
+  }
+
+  alterar(i:number): void{
+    this.nome = this.nomes[i];
+    this.nomes.splice(i,1);
+
   }
 }
