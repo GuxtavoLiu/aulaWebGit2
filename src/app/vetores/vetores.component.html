@@ -2,8 +2,13 @@
   <form class="m-5">
     <div class="row">
       <div class="form-group">
-        <input class="form-control" type="text" name="nome" value="" [(ngModel)]="nome">
+        <input class="form-control" type="text" [(ngModel)]="estado.nome" name="nome">
       </div>
+
+      <div class="form-group">
+        <input class="form-control" type="text" [(ngModel)]="estado.sigla" name="sigla">
+      </div>
+
       <div class="">
         <button class="btn btn-info" type="button" name="button" (click)="adicionar()" >Adicionar</button>
       </div>
@@ -14,21 +19,27 @@
     <thead>
       <tr>
         <th scope="col">NOME</th>
+        <th scope="col">SIGLA</th>
         <th scope="col">EXCLUIR</th>
         <th scope="col">ALTERAR</th>
       </tr>
     </thead>
     <tbody>
 
-      <tr *ngFor="let nome of nomes; let i = index" >
-        <td>{{ nome }}</td>
+      <tr *ngFor="let estado of listaEstados; let i = index" >
+        <td>{{ estado.nome }}</td>
+        <td>{{ estado.sigla }}</td>
         <td>
-          <button class="btn btn-danger" type="button" name="button" (click)="excluir(i)">
+          <!-- botao excluir -->
+          <button class="btn btn-danger" type="button" name="button" (click)="excluir(i)" >
             <i class="fas fa-trash-alt"></i>
           </button>
         </td>
         <td>
-          <button class="btn btn-warning" type="button" name="button" (click)="alterar(i)"><i class="fas fa-edit"></i></button>
+          <!-- botao alterar -->
+          <button class="btn btn-warning" type="button" name="button" (click)="alterar(i)" >
+            <i class="fas fa-edit"></i>
+          </button>
         </td>
       </tr>
     </tbody>

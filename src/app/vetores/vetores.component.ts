@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Estado } from '../entidades/estado';
 @Component({
   selector: 'vetores-component'
   ,templateUrl: 'vetores.component.html'
@@ -8,30 +8,27 @@ import { Component } from '@angular/core';
 
 
 export class VetoresComponent{
-  nomes= new Array<string>();
+  listaEstados = new Array<Estado>();
 
-  nome : string='';
-
+  estado : Estado = new Estado;
 
   constructor(){
   }
 
   adicionar() : void{
-    if (this.nome != '') {
+    this.listaEstados.push(this.estado);
+    this.estado = new Estado();
 
-      this.nomes.push(this.nome);
-      this.nome= '';
-    }
 
   }
-
   excluir(i:number) : void{
-    this.nomes.splice(i,1);
-  }
+  this.listaEstados.splice(i,1);
+}
 
-  alterar(i:number): void{
-    this.nome = this.nomes[i];
-    this.nomes.splice(i,1);
 
-  }
+alterar(i:number): void{
+  this.estado = this.listaEstados[i];
+  this.listaEstados.splice(i,1);
+
+}
 }
